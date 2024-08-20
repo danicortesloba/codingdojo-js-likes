@@ -1,3 +1,4 @@
+/*
 var likeCount1 = 0;
 var likeCountText1 = document.getElementById("likeCount1");
 var likeBtn1 = document.getElementById("likeBtn1");
@@ -26,4 +27,19 @@ likeBtn3.addEventListener("click", clickLike3);
 function clickLike3() {
     likeCount3 += 1
     likeCountText3.innerText = `${likeCount3} like(s)`
+}
+*/
+var likeCount = 0;
+var buttons = document.getElementsByClassName("likeBtn");
+for(const button of buttons){
+    button.addEventListener("click", function() {
+        var buttonTexts = document.getElementsByClassName("textCount")
+        for(const text of buttonTexts){
+            if(button.id.includes(text.id)){
+                console.log("hello")
+                likeCount += 1;
+                text.innerHTML = likeCount + "likes"
+            }
+        }
+})
 }
